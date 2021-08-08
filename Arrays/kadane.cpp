@@ -15,7 +15,7 @@ void kadane_maxSum(int arr[],int n){
 	cout<<cs<<endl;
 	}
 	ms=max(ms,cs);
-	cout<<ms;
+	cout<<"max sum is "<<ms;
 }
 
 int main(){

@@ -6,16 +6,14 @@ void kadane_maxSum(int arr[],int n){
 	int cs=0;
 	int ms=0;
 	for(int i=0;i<n;i++){
-		if(arr[i]>0){
 		cs+=arr[i];
+		if(cs<0){
+			cs=0;
+		}
+		ms=max(ms,cs);
 	}
-	else{
-		cs=0;
-	}
-	cout<<cs<<endl;
-	}
-	ms=max(ms,cs);
-	cout<<"max sum is "<<ms;
+	return ms;
+	cout<<"max sum is"<<ms;
 }
 
 int main(){

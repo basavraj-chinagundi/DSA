@@ -5,17 +5,23 @@ struct Node{
     Node* next;
 };
 
-Node* head=new Node();
+Node* head=NULL;
 
 void push_end( int d){
     Node* new_node=new Node();
-    Node* temp=head;
-    while(temp->next!=NULL){
-        temp=temp->next;
-    }
-    temp->next=new_node;
     new_node->val=d;
     new_node->next=NULL;
+    
+    if(head==NULL){
+        head=new_node;
+    }
+    else{
+        Node* temp=head;
+        while(temp->next!=NULL){
+            temp=temp->next;
+        }
+        temp->next=new_node;
+    }  
 }
 
 void print(Node* n){
@@ -24,10 +30,8 @@ void print(Node* n){
         n=n->next;
     }
 }
-
+ 
 int main(){
-    head->val=5;
-    head->next=NULL;
     push_end(7);
     push_end(20);
     print(head);
